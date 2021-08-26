@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>HOME</title>
+  <div th:replace="/projection/layout/head::resources-pro"></div>
+  <link rel="stylesheet" href="/css/film.css">
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <div th:replace="/projection/layout/side-bar::side-bar-pro"></div>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content-->
+      <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="page-title-box">
+              <h4 class="page-title">Danh sách các Bộ phim</h4>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="header-title mb-4">Danh sách Phim</h4>
+                <div class="table-responsive">
+                  <table class="table table-centered mb-0 table-nowrap" id="listFilm">
+                    <tbody class="row mb-2">
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- end .table-responsive-->
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END wrapper -->
+<!--<div th:replace="/projection/layout/editModalProduct"></div>-->
+
+
+</body>
+<div th:replace="/projection/layout/script::script-pro"></div>
+
+<script src="/js/projection/listFilm.js"></script>
+</html>

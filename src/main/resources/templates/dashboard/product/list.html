@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>HOME</title>
+  <div th:replace="/dashboard/layout/head::resources"></div>
+  <style>
+    .error{
+      color: red;
+      font-style: italic;
+    }
+    td{
+      max-width: 150px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <div th:replace="/dashboard/layout/side-bar::side-bar"></div>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content-->
+      <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="page-title-box">
+              <h4 class="page-title">Danh sách các sản phẩm</h4>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="header-title mb-4">Danh sách sản phẩm</h4>
+                <div class="table-responsive">
+                  <table class="table table-centered mb-0 table-nowrap" id="productList">
+                    <thead>
+                      <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Mô tả</th>
+                        <th>Loại sản phẩm</th>
+                        <th class="text-center"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+<!--                    <tfoot id="paging" >-->
+
+<!--                    </tfoot>-->
+                  </table>
+                </div>
+                <!-- end .table-responsive-->
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+
+      </div>
+      <!-- end container-fluid -->
+
+    </div>
+    <!-- end content -->
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+<div th:replace="/dashboard/layout/editModalProduct::editModalProduct"></div>
+</body>
+<div th:replace="/dashboard/layout/script::script"></div>
+
+<script src="/js/manager/listProduct.js"></script>
+</html>

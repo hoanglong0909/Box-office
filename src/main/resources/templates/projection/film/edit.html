@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>HOME</title>
+  <div th:replace="/projection/layout/head::resources-pro"></div>
+  <style>
+    .error{
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <div th:replace="/projection/layout/side-bar::side-bar-pro"></div>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content-->
+      <div class="row">
+        <div class="col-lg-12" style="margin-top: 10px;">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="header-title mb-4">Thông tin bộ phim</h4>
+              <form class="parsley-examples" id="edit-film">
+
+              </form>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end container-fluid -->
+
+    </div>
+    <!-- end content -->
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+</div>
+
+</body>
+<div th:replace="/projection/layout/script::script-pro"></div>
+
+<script src="/js/projection/editFilm.js"></script>
+
+<script>
+
+  $(() => {
+    $("#create-form").validate({
+      errorElement: 'div',
+      rules: {
+        film_name:  {
+          required: true,
+          minlength: 2,
+          maxlength: 50,
+        },
+        film_duration: {
+          required: true,
+          validateTime: true,
+        },
+        film_description:{
+          required:true
+        },
+        exp_date:{
+          required:true
+        },
+        rel_date:{
+          required:true
+        },
+      },
+
+      messages: {
+        film_name: {
+          required: "Vui lòng nhập tên Phim",
+          minlength: "Vui lòng nhập tối thiểu 2 ký tự!",
+          maxlength: "Vui lòng nhập tối đa chỉ có 50 ký tự!"
+        },
+        film_duration: {
+          required: "Vui lòng nhập Thời lượng phim!",
+        },
+        film_description:{
+          required:"Vui lòng nhập mô tả!"
+        },
+        exp_date:{
+          required:"Vui chọn ngày công chiếu!"
+        },
+        rel_date:{
+          required:"Vui lòng chọn ngày kết thúc!"
+        },
+      },
+      submitHandler : createFilm
+    });
+  });
+
+  $.validator.addMethod("validateTime",function (value, element){
+    return this.optional(element) ||/([01]?[0-9]|2[0-3]):[0-5][0-9]/.test(value);
+  }, "Hãy nhập giờ hợp lệ!!!");
+</script>
+
+
+
+</html>

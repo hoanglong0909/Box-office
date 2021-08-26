@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>HOME</title>
+  <div th:replace="/projection/layout/head::resources-pro"></div>
+  <link rel="stylesheet" href="/css/schedule.css">
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <div th:replace="/projection/layout/side-bar::side-bar-pro"></div>
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+      <!-- Start Content-->
+      <div class="container-fluid">
+        <!-- start page title -->
+        <!--        <div class="row">-->
+        <table>
+          <th><h4>Danh sách Lịch phim</h4></th>
+          <th class="thInput">
+            <input type="text" class="form-control" id="search" placeholder="Tìm kiếm...">
+          </th>
+          <th>
+            <button class="btn searchSchedule" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </th>
+        </table>
+      </div>
+    </div>
+    <!--        </div>-->
+    <!-- end page title -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="header-title mb-4">Danh sách Lịch chiếu<input type="month" id="schedule_month" name="schedule_month"></h4>
+
+            <div class="table-responsive">
+              <table class="table table-centered mb-0 table-nowrap" id="listSchedule">
+                <tbody class="container row">
+
+
+                </tbody>
+              </table>
+            </div>
+            <!-- end .table-responsive-->
+          </div>
+          <!-- end card-body -->
+        </div>
+        <!-- end card -->
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+</div>
+
+<!-- END wrapper -->
+<div th:replace="/projection/layout/editModalShow::editModalShow"></div>
+
+</body>
+<div th:replace="/projection/layout/script::script-pro"></div>
+
+<script src="/js/projection/listSchedule.js"></script>
+</html>

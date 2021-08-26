@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Modal Edit-->
+<div th:fragment="editModalCategory" class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-category">
+          <fieldset class="row g-3">
+            <div>
+              <input type="text" hidden class="form-control" id="upID" name="upID" value="">
+            </div>
+            <div class="col-md-12">
+              <label for="upCategoryName" class="form-label">Category Name</label>
+              <input type="text" class="form-control" id="upCategoryName" name="upCategoryName" value="">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary dismiss-modal" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary save-category">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

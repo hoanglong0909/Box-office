@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Modal Edit-->
+<div th:fragment="editModalMember" class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Chỉnh sửa thông tin thành viên</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-member">
+                    <fieldset class="row g-3">
+                        <div>
+                            <input type="text" hidden class="form-control" id="upID" name="upID" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="member_name" class="form-label">Tên thành viên</label>
+                            <input type="text" class="form-control" id="member_name" name="member_name" required value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Hạng vé</label>
+                            <select disabled class="form-control" name="classes" id="classes" required value="">
+
+                            </select>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary dismiss-modal" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary save-member">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

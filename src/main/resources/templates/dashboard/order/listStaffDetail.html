@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>HOME</title>
+  <div th:replace="/dashboard/layout/head::resources"></div>
+  <style>
+    #search-button{
+      margin-top: 7px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <div th:replace="/dashboard/layout/side-bar::side-bar"></div>
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+  <div class="content-page">
+    <div class="content">
+      <!-- Start Content-->
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12" style="margin-top: 10px;">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="header-title mb-4">Tìm kiếm nhân viên</h4>
+
+                <form class="parsley-examples row" id="create-form">
+                  <div class="form-group col-lg-5">
+                    <label>Ngày <span class="text-danger">*</span></label>
+                    <input type="date" name="order_date" parsley-trigger="change" required placeholder="Nhập ngày để tìm kiếm" class="form-control" id="order_date">
+                  </div>
+                  <div class="form-group col-lg-5">
+                    <label>Tên nhân viên <span class="text-danger">*</span></label>
+                    <select class="form-control" name="username" id="username" value="">
+
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <br>
+                    <button class="btn btn-primary form-control waves-effect waves-light mr-1" id="search-button" type="button">
+                      Tìm kiếm
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+
+        <div class="row">
+          <!-- end col -->
+
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header py-3 bg-transparent">
+                <div class="card-widgets">
+                  <a href="javascript:" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
+                  <a data-toggle="collapse" href="#cardCollpase4" role="button" aria-expanded="false" aria-controls="cardCollpase4"><i class="mdi mdi-minus"></i></a>
+                  <a href="#" data-toggle="remove"><i class="mdi mdi-close"></i></a>
+                </div>
+                <h5 class="header-title mb-0">Doanh thu bán hàng của nhân viên </h5>
+              </div>
+              <div id="cardCollpase4" class="collapse show">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-nowrap mb-0" id="orderByStaff">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Ngày bán</th>
+                          <th>Giờ bán</th>
+                          <th>Tổng tiền</th>
+                          <th>Tên nhân viên</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                      <tfoot>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- end card-->
+
+          </div>
+          <!-- end col -->
+
+        </div>
+        <!-- End row -->
+
+      </div>
+      <!-- end container-fluid -->
+
+    </div>
+    <!-- end content -->
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>
+<!-- END wrapper -->
+
+</body>
+<div th:replace="/dashboard/layout/script::script"></div>
+
+<script src="/js/manager/orderStaff.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Danh sách tài khoản</title>
+  <div th:replace="/dashboard/layout/head::resources"></div>
+</head>
+<style>
+  .error{
+    color: red;
+    font-style: italic;
+  }
+</style>
+<body>
+<!-- Begin page -->
+<div id="wrapper">
+  <div th:replace="/dashboard/layout/side-bar::side-bar"></div>
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+  <div class="content-page">
+    <div class="content">
+      <!-- Start Content-->
+      <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="page-title-box">
+              <h4 class="page-title">Danh sách các tài khoản</h4>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="header-title mb-4">Danh sách tài khoản</h4>
+                <div class="table-responsive">
+                  <table class="table table-centered mb-0 table-nowrap" id="inline-editable">
+                    <thead>
+                    <tr>
+                      <th class="text-center">Họ và tên</th>
+                      <th class="text-center">Tên đăng nhập</th>
+                      <th class="text-center">Email</th>
+                      <th class="text-center">Số điện thoại</th>
+                      <th class="text-center">Chức vụ</th>
+                      <th class="text-center"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="listUsers">
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- end .table-responsive-->
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container-fluid -->
+    </div>
+    <!-- end content -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>
+<!-- END wrapper -->
+<div th:replace="/dashboard/layout/editModalUser::editModalUser"></div>
+</body>
+<div th:replace="/dashboard/layout/script::script"></div>
+
+
+<script src="/js/manager/user.js"></script>
+
+</html>

@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Modal Edit-->
+<div th:fragment="searchModalMember" class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header float-right">
+          <h5>Danh sách các thành viên</h5>
+          <button type="button" class="btn-close close-button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Tên thành viên</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Hạng vé</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody id="detailMember">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</html>
